@@ -1,0 +1,96 @@
+/* commons css */
+
+.imgfluid {
+  width: 100%;
+  height: auto;
+}
+
+/* navbar */
+
+header {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: #f8f9fa;
+}
+
+/* main section */
+.pageTitle {
+  font-size: 45px;
+  font-weight: 600;
+  text-align: center;
+
+  margin-top: 25px;
+}
+
+/* product section */
+
+h2.productName {
+  font-size: 25px;
+  padding-top: 14px;
+}
+
+span.discountPrice {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+span.originalPrice {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+span.discountOff {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ff905a;
+  margin-left: 6px;
+}
+
+.cartBtn {
+  font-size: 20px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  background: #df4b6c;
+  border: 2px solid #df4b6c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navCartBtn {
+  font-size: 25px;
+  padding: 8px;
+  border: none;
+  color: #262626;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.cartBtn:hover {
+  background: #f5f5f5;
+  color: #262626;
+}
+
+.cartCounter {
+  font-size: 14px;
+  background: #df4b6c;
+  color: white;
+  padding: 0px 6px;
+  font-weight: 600;
+  position: absolute;
+  top: 4px;
+  right: -2px;
+  border-radius: 21px;
+}
+
+.cartImg {
+  width: 165px;
+  height: auto;
+}

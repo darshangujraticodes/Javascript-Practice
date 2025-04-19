@@ -1,0 +1,51 @@
+const items = [
+  {
+    id: "1",
+    image: "image/1.png",
+    name: "Men Denim Zipper",
+    info: "V3E Men's Hooded Denim Jacket Zipper Coat Outerwear",
+    price: { discountPrice: "1259", originalPrice: "2999" },
+    discountOff: "58",
+  },
+  {
+    id: "2",
+    image: "image/2.png",
+    name: "Men TShirt",
+    info: "Men Sports and Athlete wear Puma Pure Cotton T-shirt ",
+    price: { discountPrice: "599", originalPrice: "899" },
+    discountOff: "45",
+  },
+  {
+    id: "3",
+    image: "image/3.png",
+    name: "Men Shirt",
+    info: "Men Light Blue Solid Regular Fit Chambray Casual Shirt",
+    price: { discountPrice: "499", originalPrice: "999" },
+    discountOff: "25",
+  },
+
+  {
+    id: "4",
+    image: "image/5.png",
+    name: "Men Pants",
+    info: "Black solid track pants, has elasticated waistband, drawstring closure, 2 pockets",
+    price: { discountPrice: "499", originalPrice: "899" },
+    discountOff: "35",
+  },
+  {
+    id: "5",
+    image: "image/6.png",
+    name: "Men Cargo",
+    info: "V3E Men's Hooded Denim Jacket Zipper Coat Outerwear",
+    price: { discountPrice: "1259", originalPrice: "2999" },
+    discountOff: "40",
+  },
+  {
+    id: "6",
+    image: "image/7.png",
+    name: "Men Track Pants",
+    info: "Black regular-fit track pants, elasticated waistband with two zip pockets",
+    price: { discountPrice: "699", originalPrice: "699" },
+    discountOff: "0",
+  },
+];
