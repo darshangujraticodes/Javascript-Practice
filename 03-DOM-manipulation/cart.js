@@ -25,51 +25,65 @@ const bagItemCounter = (newQuantityBagItems) => {
 };
 
 const displayCartlist = (data) => {
+  console.log("display cart ", data);
   let cartProductList = "";
 
-  data.forEach((item) => {
-    cartProductList += `
-      <div class="cartItemWrap mb-4">
-                <div class="cartItemCard  row mb-3 ">
-                  <div class="col-3 ">
-                    <img src="${item.image}" class="imgfluid rounded-2" alt="${item.name}" />
-                  </div>
-                  <div class="col-8">
-                    <div class="productContentWrap position-relative">
-                      <h2 class="productName">${item.name}</h2>
-                      <p class="productInfo mb-1">
-                            ${item.info}
-                      </p>
-                      <p class="mb-1">
-                        <span class="discountPrice"> ₹ ${item.price.discountPrice} </span>
-
-                        <span class="originalPrice">MRP <s>₹ ${item.price.originalPrice}  </s> </span>
-
-                        <span class="discountOff mb-1">(${item.discountOff}% OFF)</span>
-
-                      </p>
-                      <p class="mb-1">
-                      <span class="fw-semibold">  ${item.return_period}  Days </span>  
- Replacement Policy
-                      </p>
-                       <p class="mb-1">
-                        <span class="fw-semibold">   ${item.delivery_date} Days </span>  
- Required to Deliver Product 
-                      </p>
-                      <p class="mb-1">
-                        <span class="fw-semibold">  Ordered Quantity : ${item.quantity}  </span>  
-                      </p>
-                      <div class="crossImgWrap">
-                        <button onClick="removeItem(${item.id})" class="crossBtn">X</button>
-                      </div>
-
+  if (data.length) {
+    data.forEach((item) => {
+      cartProductList += `
+        <div class="cartItemWrap mb-4">
+                  <div class="cartItemCard  row mb-3 ">
+                    <div class="col-3 ">
+                      <img src="${item.image}" class="imgfluid rounded-2" alt="${item.name}" />
                     </div>
+                    <div class="col-8">
+                      <div class="productContentWrap position-relative">
+                        <h2 class="productName">${item.name}</h2>
+                        <p class="productInfo mb-1">
+                              ${item.info}
+                        </p>
+                        <p class="mb-1">
+                          <span class="discountPrice"> ₹ ${item.price.discountPrice} </span>
+  
+                          <span class="originalPrice">MRP <s>₹ ${item.price.originalPrice}  </s> </span>
+  
+                          <span class="discountOff mb-1">(${item.discountOff}% OFF)</span>
+  
+                        </p>
+                        <p class="mb-1">
+                        <span class="fw-semibold">  ${item.return_period}  Days </span>  
+   Replacement Policy
+                        </p>
+                         <p class="mb-1">
+                          <span class="fw-semibold">   ${item.delivery_date} Days </span>  
+   Required to Deliver Product 
+                        </p>
+                        <p class="mb-1">
+                          <span class="fw-semibold">  Ordered Quantity : ${item.quantity}  </span>  
+                        </p>
+                        <div class="crossImgWrap">
+                          <button onClick="removeItem(${item.id})" class="crossBtn">X</button>
+                        </div>
+  
+                      </div>
+                    </div>
+                    
                   </div>
-                  
                 </div>
-              </div>
-    `;
-  });
+      `;
+    });
+  } else {
+    const data = document.querySelector(".emptyCartWrap");
+
+    data.innerHTML = `
+
+        <div class="emptyCartContent">
+          <h1 class="text-center">Cart is Empty</h1>
+          <p class="text-center">Kindly Add Items to Get Product list</p>
+        </div>
+      
+  `;
+  }
 
   let cartHtmlItem = document.querySelector(".cartList");
 
