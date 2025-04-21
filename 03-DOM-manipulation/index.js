@@ -122,13 +122,13 @@ const addToBag = (itemId) => {
     console.log("It is Already there");
 
     bagItemsQuantity.map((item) => {
-      console.log(item.id, itemId);
+      // console.log(item.id, itemId);
 
       if (item.id == itemId) {
         item.quantity += 1;
       }
 
-      console.log(item);
+      // console.log(item);
     });
   }
 

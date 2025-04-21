@@ -6,7 +6,7 @@ const allProductItems = items;
 
 // console.log(bagitems);
 
-const bagItemCounter = () => {
+const bagItemCounter = (newQuantityBagItems) => {
   let cartCount = document.querySelector(".cartCounter");
   // cartCount.innerHTML = items.length;
 
@@ -14,7 +14,7 @@ const bagItemCounter = () => {
     localStorage.getItem("bagItemsQuantity")
   );
 
-  const totalQuantity = storageQuantityBagItems.reduce(
+  const totalQuantity = newQuantityBagItems.reduce(
     (sum, item) => sum + item.quantity,
     0
   );
@@ -126,19 +126,19 @@ const removeItem = (deleteItemId) => {
 
   const storageBagItems = JSON.parse(localStorage.getItem("bagItems"));
 
-  console.log(storageQuantityBagItems, storageBagItems);
+  // console.log(storageQuantityBagItems, storageBagItems);
 
   const newQuantityBagItems = storageQuantityBagItems.filter(
     (item) => item.id != deleteItemId
   );
   const newBagItems = storageBagItems.filter((item) => item != deleteItemId);
 
-  console.log(newQuantityBagItems, newBagItems);
+  // console.log(newQuantityBagItems, newBagItems);
 
   localStorage.setItem("bagItemsQuantity", JSON.stringify(newQuantityBagItems));
   localStorage.setItem("bagItems", JSON.stringify(newBagItems));
 
-  bagItemCounter();
+  bagItemCounter(newQuantityBagItems);
 
   const data = fetchDataList(newBagItems);
 
