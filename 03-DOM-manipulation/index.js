@@ -84,31 +84,71 @@ const displayItemOnHomepage = () => {
 };
 
 let bagItems = [];
+let bagItemsQuantity = [];
+
+if (localStorage.getItem("bagItems")) {
+  bagItems = JSON.parse(localStorage.getItem("bagItems"));
+  bagItemsQuantity = JSON.parse(localStorage.getItem("bagItemsQuantity"));
+}
 
 const bagItemCounter = () => {
   let cartCount = document.querySelector(".cartCounter");
 
-  if (bagItems.length > 0) {
+  let totalQuantity;
+
+  if (bagItemsQuantity.length) {
     cartCount.style.visibility = "visible";
-    cartCount.innerHTML = bagItems.length;
+    totalQuantity = bagItemsQuantity.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+
+    // console.log(totalQuantity, bagItems);
+
+    cartCount.innerHTML = totalQuantity;
   } else {
     cartCount.style.visibility = "hidden";
   }
 };
 
 const addToBag = (itemId) => {
-  bagItems.push(itemId);
+  // console.log(bagItemsQuantity);
+
+  if (!bagItems.includes(itemId)) {
+    console.log("new item added");
+    bagItems.push(itemId);
+    bagItemsQuantity.push({ id: itemId, quantity: 1 });
+  } else {
+    console.log("It is Already there");
+
+    bagItemsQuantity.map((item) => {
+      console.log(item.id, itemId);
+
+      if (item.id == itemId) {
+        item.quantity += 1;
+      }
+
+      console.log(item);
+    });
+  }
 
   localStorage.setItem("bagItems", JSON.stringify(bagItems));
 
+  localStorage.setItem("bagItemsQuantity", JSON.stringify(bagItemsQuantity));
+
   bagItemCounter();
 
-  console.log(bagItems);
+  // console.log(bagItemsQuantity);
 };
 
 function onLoad() {
-  let bagStorageItems = JSON.parse(localStorage.getItem("bagItems"));
+  bagStorageItems = JSON.parse(localStorage.getItem("bagItems"));
+  bagStorageQuantityItems = JSON.parse(
+    localStorage.getItem("bagItemsQuantity")
+  );
+
   bagItems = bagStorageItems ? bagStorageItems : [];
+  bagItemsQuantity = bagStorageQuantityItems ? bagStorageQuantityItems : [];
   displayItemOnHomepage();
   bagItemCounter();
 }

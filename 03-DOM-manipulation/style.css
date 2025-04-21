@@ -11,6 +11,7 @@ header {
   position: sticky !important;
   top: 0 !important;
   background-color: #f8f9fa;
+  z-index: 50;
 }
 
 /* main section */
@@ -93,4 +94,20 @@ span.discountOff {
 .cartImg {
   width: 165px;
   height: auto;
+}
+
+.crossImgWrap {
+  position: absolute;
+}
+
+.crossImgWrap {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+
+.crossBtn {
+  border: none;
+  background: transparent;
+  font-size: 28px;
 }

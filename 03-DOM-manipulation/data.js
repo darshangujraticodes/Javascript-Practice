@@ -6,6 +6,8 @@ const items = [
     info: "V3E Men's Hooded Denim Jacket Zipper Coat Outerwear",
     price: { discountPrice: "1259", originalPrice: "2999" },
     discountOff: "58",
+    return_period: 10,
+    delivery_date: 15,
   },
   {
     id: "2",
@@ -14,6 +16,8 @@ const items = [
     info: "Men Sports and Athlete wear Puma Pure Cotton T-shirt ",
     price: { discountPrice: "599", originalPrice: "899" },
     discountOff: "45",
+    return_period: 12,
+    delivery_date: 5,
   },
   {
     id: "3",
@@ -22,6 +26,8 @@ const items = [
     info: "Men Light Blue Solid Regular Fit Chambray Casual Shirt",
     price: { discountPrice: "499", originalPrice: "999" },
     discountOff: "25",
+    return_period: 10,
+    delivery_date: 6,
   },
 
   {
@@ -31,6 +37,8 @@ const items = [
     info: "Black solid track pants, has elasticated waistband, drawstring closure, 2 pockets",
     price: { discountPrice: "499", originalPrice: "899" },
     discountOff: "35",
+    return_period: 15,
+    delivery_date: 2,
   },
   {
     id: "5",
@@ -39,6 +47,8 @@ const items = [
     info: "V3E Men's Hooded Denim Jacket Zipper Coat Outerwear",
     price: { discountPrice: "1259", originalPrice: "2999" },
     discountOff: "40",
+    return_period: 10,
+    delivery_date: 3,
   },
   {
     id: "6",
@@ -47,5 +57,7 @@ const items = [
     info: "Black regular-fit track pants, elasticated waistband with two zip pockets",
     price: { discountPrice: "699", originalPrice: "699" },
     discountOff: "0",
+    return_period: 5,
+    delivery_date: 4,
   },
 ];
